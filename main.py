@@ -6,7 +6,6 @@ from line import main
 import numpy as np
 from scipy.integrate import quad
 from scipy.misc import derivative
-import torch
 
 driver = Driver()
 timestep = int(driver.getBasicTimeStep())
@@ -47,7 +46,6 @@ def get_detected_labels_with_area_filter(image, min_area=10):
     cv2.imshow("asd",image)
     cv2.waitKey(1)
     print(type(image))
-    results = model(image)
 
     conf_threshold = 0
     label = None
@@ -67,7 +65,6 @@ def get_detected_labels_with_area_filter(image, min_area=10):
 
     return label 
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path="/home/koesan/Belgeler/webots/controllers/my_controller2/best_93.pt")
 
 start_time = time.time()  # Başlangıç zamanını kaydedin
 last_prediction_time = time.time()
