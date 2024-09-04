@@ -1,6 +1,12 @@
 # Self Driving Car
 
-Proje hala geliştiriliyor.
+***Proje hala geliştiriliyor.***
+
+# Gereksinimler
+
+weboots == R2023b
+opencv==4.10.0.84
+scipy==1.14.1
 
 
 
