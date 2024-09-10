@@ -13,13 +13,15 @@ scipy==1.14.1
 ---
 # 10 Eylül 2024 (eklemeler ve güncellemeler)
 
+## main.py Ana kod. (Güncellemeler)
+
 
 ---
 
 # 4 Eylül 2024 (eklemeler ve güncellemeler)
 
 ---
-## `main.py` Ana kod. (Ekleme)
+## main.py Ana kod. (Ekleme)
 
 `main.py` dosyası, Webots simülasyon ortamında bir aracı şeritler üzerinde yönlendirmek için kullanılan ana kontrol kodunu içerir. Kod, araç kameralardan aldığı görüntülerle şeritleri tespit eder ve PID kontrol algoritmasını kullanarak aracın yönünü ayarlar.
 
