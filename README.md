@@ -13,7 +13,7 @@ scipy==1.14.1
 
 ---
 
-# 4 Eylül 2024
+# 4 Eylül 2024 (eklemeler ve güncellemeler)
 
 ---
 ## `main.py` Ana kod.
