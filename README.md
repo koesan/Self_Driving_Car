@@ -11,10 +11,25 @@ opencv==4.10.0.84
 scipy==1.14.1
 
 ---
-# 10 Eylül 2024 (eklemeler ve güncellemeler)
+# 10 Eylül 2024 (Eklemeler ve Güncellemeler)
 
-## main.py Ana kod. (Güncellemeler)
+## main.py Ana Kod (Güncellemeler)
 
+Main koduna, trafik tabelalarını ve işaretlerini tespit etmek için YOLOv4 ile eğitilmiş bir model entegre edilmiştir. Bu modelin veri seti, TTVS veri seti içindeki verilerden alınmıştır, ancak model tam olarak eğitilmediği için doğruluk oranı yüksek değildir. Ayrıca, dönüş işlemlerini gerçekleştirmek için `dönüş.py` kodu eklenmiştir. Bu kod, aracın sola, sağa ve ileri doğru dönüşlerini başarılı bir şekilde, ancak tam olarak stabil olmayan bir şekilde yapabilmesini sağlar.
+
+### Genel Yapı
+
+1. **Mesafe Kontrolü (`is_close`)**
+
+   YOLOv4 ile görselden nesne tespiti yaparken aynı nesneyi birden fazla kez tespit etmesini engellemek için bu fonksiyon eklenmiştir. Bu fonksiyon, tespit edilen iki nesnenin merkezlerini karşılaştırarak, aralarındaki mesafe belirli bir değerin altında olduğunda aynı nesne olarak değerlendirilmesini sağlar.
+
+2. **Trafik İşareti Tespiti ve Filtreleme (`get_detected_labels_with_area_filter`)**
+
+   YOLOv4 modeli, ikinci kameradan gelen görüntüler ile belirli bir süre (kodda 2 saniyede bir olarak ayarlandı) içinde nesne tespiti yapar. Bu süre sınırı, kaynakların sürekli olarak kullanılmasını önlemek içindir. Model, TTVS veri setinden alınan 3000 görsel üzerinde eğitilmiştir, ancak eğitim tam olarak tamamlanmadığı için doğruluk oranı yüksek değildir. Tabela tespiti dönüş algoritması için kullanıldığından, tespit edilen nesnelerin bir alan ölçeği eklenmiştir; bu sayede küçük alanlı nesneler dönüş algoritması tarafından dikkate alınmaz.
+
+### dönüş.py Dönüş Algoritması (Ekleme)
+
+Aracın trafik işaretlerine göre yönlendirilmesi için PID kontrol algoritması kullanılmıştır. PID algoritmasının kullanımı, dönüşlerin daha düzgün ve genel yapının daha stabil olmasını sağlamaktadır. Tabela tespiti gerçekleştiğinde `dönüş.py` modülündeki `start()` fonksiyonu çalışır. Bu fonksiyon, ilk olarak tespit edilen tabelaya göre yapılması gereken eylemi belirler. Şimdilik sağa, sola ve ileri gitme eylemleri eklenmiştir. Daha sonra, araç belirli bir süre düz gider ve ardından işarete göre düz, sola veya sağa dönüş başlar. Hedef direksiyon açısı belirlenir ve PID algoritması aracın direksiyon açısını hesaplayarak ayarlar. Dönüş tamamlandığında, direksiyon açısı sıfırlanır. Sol veya sağ dönüşlerde, dönüş sonrası şerit tekrar tespit edilebilmesi için araç belirli bir süre boyunca düz gitmeye devam eder. Kod, aracın şerit tespit ve takibine devam etmesiyle sonlanır.
 
 ---
 
