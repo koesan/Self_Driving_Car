@@ -10,13 +10,16 @@ opencv==4.10.0.84
 
 scipy==1.14.1
 
+---
+# 10 Eylül 2024 (eklemeler ve güncellemeler)
+
 
 ---
 
 # 4 Eylül 2024 (eklemeler ve güncellemeler)
 
 ---
-## `main.py` Ana kod.
+## `main.py` Ana kod. (Ekleme)
 
 `main.py` dosyası, Webots simülasyon ortamında bir aracı şeritler üzerinde yönlendirmek için kullanılan ana kontrol kodunu içerir. Kod, araç kameralardan aldığı görüntülerle şeritleri tespit eder ve PID kontrol algoritmasını kullanarak aracın yönünü ayarlar.
 
@@ -50,7 +53,7 @@ Bu yapı, aracın yol şeritlerini doğru bir şekilde takip etmesini ve uygun �
 
 ---
 
-# line.py (Şerit Tespit Algoritması)
+# line.py (Şerit Tespit Algoritması) (Ekleme)
 
 Bu algoritma, görüntü işleme teknikleri kullanarak yol üzerindeki şeritleri tespit etmeyi amaçlar. Yolun alt yarısındaki şerit pikselleri analiz edilerek, sol ve sağ şeritler bulunur ve bu piksellere polinom eğriler uydurularak şerit çizgilerinin eğriliği ve aracın konumu hesaplanır.
 
