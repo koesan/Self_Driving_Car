@@ -31,6 +31,10 @@ Main koduna, trafik tabelalarını ve işaretlerini tespit etmek için YOLOv4 il
 
 Aracın trafik işaretlerine göre yönlendirilmesi için PID kontrol algoritması kullanılmıştır. PID algoritmasının kullanımı, dönüşlerin daha düzgün ve genel yapının daha stabil olmasını sağlamaktadır. Tabela tespiti gerçekleştiğinde `dönüş.py` modülündeki `start()` fonksiyonu çalışır. Bu fonksiyon, ilk olarak tespit edilen tabelaya göre yapılması gereken eylemi belirler. Şimdilik sağa, sola ve ileri gitme eylemleri eklenmiştir. Daha sonra, araç belirli bir süre düz gider ve ardından işarete göre düz, sola veya sağa dönüş başlar. Hedef direksiyon açısı belirlenir ve PID algoritması aracın direksiyon açısını hesaplayarak ayarlar. Dönüş tamamlandığında, direksiyon açısı sıfırlanır. Sol veya sağ dönüşlerde, dönüş sonrası şerit tekrar tespit edilebilmesi için araç belirli bir süre boyunca düz gitmeye devam eder. Kod, aracın şerit tespit ve takibine devam etmesiyle sonlanır.
 
+> [!NOTE]
+> Kullanılan YOLOv4 modelinin eğitiminin tamamlanmamış olması nedeniyle doğruluğun düşük olması ve dönüş algoritmasının hala istenilen stabiliteye ulaşamaması sebebiyle yapı tam olarak stabil değil.
+>
+
 ---
 
 https://github.com/user-attachments/assets/30a03da8-7f35-4071-8cfa-f2636c6b6632
