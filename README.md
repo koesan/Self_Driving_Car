@@ -10,6 +10,8 @@ opencv==4.10.0.84
 
 scipy==1.14.1
 
+[YoloV4 dosyaları](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing)
+
 ---
 # 10 Eylül 2024 (Eklemeler ve Güncellemeler)
 
