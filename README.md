@@ -19,6 +19,8 @@ scipy==1.14.1
 
 Main koduna, trafik tabelalarını ve işaretlerini tespit etmek için YOLOv4 ile eğitilmiş bir model entegre edilmiştir. Bu modelin veri seti, [TTVS veri seti](https://github.com/ituracingdriverless/TTVS) içindeki verilerden alınmıştır, ancak model tam olarak eğitilmediği için doğruluk oranı yüksek değildir. Ayrıca, dönüş işlemlerini gerçekleştirmek için `dönüş.py` kodu eklenmiştir. Bu kod, aracın sola, sağa ve ileri doğru dönüşlerini başarılı bir şekilde, ancak tam olarak stabil olmayan bir şekilde yapabilmesini sağlar.
 
+[YoloV4 dosyaları](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing)
+
 ### Genel Yapı
 
 1. **Mesafe Kontrolü (`is_close`)**
@@ -28,9 +30,6 @@ Main koduna, trafik tabelalarını ve işaretlerini tespit etmek için YOLOv4 il
 2. **Trafik İşareti Tespiti ve Filtreleme (`get_detected_labels_with_area_filter`)**
 
    YOLOv4 modeli, ikinci kameradan gelen görüntüler ile belirli bir süre (kodda 2 saniyede bir olarak ayarlandı) içinde nesne tespiti yapar. Bu süre sınırı, kaynakların sürekli olarak kullanılmasını önlemek içindir. Model, TTVS veri setinden alınan 3000 görsel üzerinde eğitilmiştir, ancak eğitim tam olarak tamamlanmadığı için doğruluk oranı yüksek değildir. Tabela tespiti dönüş algoritması için kullanıldığından, tespit edilen nesnelerin bir alan ölçeği eklenmiştir; bu sayede küçük alanlı nesneler dönüş algoritması tarafından dikkate alınmaz.
-
-[YoloV4 dosyaları](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing)
-
 
 ### dönüş.py Dönüş Algoritması (Ekleme)
 
