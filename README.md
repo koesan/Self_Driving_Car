@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/d7583df0-7697-46d0-a2d2-b156cf7373b3
 # Self Driving Car
 
 ***Proje hala geliştiriliyor.***
@@ -43,6 +45,13 @@ Geliştirilen şerit tespit algoritması, park tabelasının x koordinatına en 
 Bu forlüm sonucunda elde edilen değer, PID kontrol sistemine iletilir ve aracın direksiyon açısı buna göre ayarlanır.
 
  Sistem şu an tam olarak stabil olmasa da, ilerleyen zamanlarda yapılacak iyileştirmelerle daha kararlı ve güvenilir hale getirilmesi planlanmaktadır.
+
+
+https://github.com/user-attachments/assets/98a1f074-7a3d-4bde-9d32-81b64f40e523
+
+## Geliştirmeler.
+
+10 Eylül'de eklenen YOLOv4 modeli, yeterince iyi eğitilmediği için yanlış tespitler yapıyordu ve bu durum, sistemin stabilitesini ve güvenilirliğini olumsuz etkiliyordu. Bu aşamada, elimdeki görsellerle modeli eğitmeye devam ettim. Her ne kadar model hala istediğim doğruluk seviyesine ulaşmamış olsa da, önceki duruma kıyasla çok daha doğru ve hassas tespitler yapıyor. Bu da sistemin güvenilirliğini ve stabilitesini artırıyor.
 
 ---
 # 10 Eylül 2024 (Eklemeler ve Güncellemeler)
