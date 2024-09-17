@@ -47,6 +47,16 @@ Bu forlüm sonucunda elde edilen değer, PID kontrol sistemine iletilir ve arac�
 
 https://github.com/user-attachments/assets/98a1f074-7a3d-4bde-9d32-81b64f40e523
 
+---
+
+### Kırmızı ışıkta durma
+
+Yolo modelini eğitmek için kullanılan veri setinde trafik ışık görselleri eklendi, bu sayede aracın kırmızı ışıkta durması salanacak. Kameradan gelen görselde, kırmızı işık tespit edilirse araç belli bir süre boyunca hızını kesecek ve süre bitince eski hızı ile ilerlemeye devam edecek. 
+
+https://github.com/user-attachments/assets/328c157a-2127-43dd-b30e-6ebad8208eec
+
+---
+
 ## Geliştirmeler.
 
 10 Eylül'de eklenen YOLOv4 modeli, yeterince iyi eğitilmediği için yanlış tespitler yapıyordu ve bu durum, sistemin stabilitesini ve güvenilirliğini olumsuz etkiliyordu. Bu aşamada, elimdeki görsellerle modeli eğitmeye devam ettim. Her ne kadar model hala istediğim doğruluk seviyesine ulaşmamış olsa da, önceki duruma kıyasla çok daha doğru ve hassas tespitler yapıyor. Bu da sistemin güvenilirliğini ve stabilitesini artırıyor.
