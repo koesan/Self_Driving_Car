@@ -32,6 +32,7 @@ https://github.com/user-attachments/assets/a90081f1-d1e7-478b-adcc-0c72c80e530e
 ---
 ### Park algoritması:
 
+Park kısmında öncelikle araç park tabelasını görene kara kör ilerleyiş dediğiğimiz bir ilerleyişi segileyecek. bu ilerleyiş önceden belirlenmiş olacaktır. bu ilerleyiş sırasında yolov4 ile eğitilmiş modele sürekli olarak tabela tespit için kullanılan kameradan görsel aktarılacak. model
 
 
 ---
