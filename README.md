@@ -12,6 +12,28 @@ scipy==1.14.1
 
 [YoloV4 dosyaları](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing)
 
+
+---
+# 17 Eylül 2024 (Eklemeler ve Güncellemeler)
+
+## Eklenenler
+
+### Şerit değiştirme algoritması:
+
+
+Engel çıkması veya gerekli durumlarda aracın karşı şeride geçebilmesi gerekmektedir. Bu şerit değişimini sağlamak için kamera kullanılmıştır. Genellikle engel tespiti gibi durumlarda LIDAR tercih edilse de, özellikle Tesla gibi otonom sürüş özelliklerine sahip elektrikli araç satan büyük firmalar, maliyetleri düşürmek için LIDAR sensörlerini çıkarmakta ve genel olarak kamera ve mesafe sensörleri kullanmaktadır. Bu projede de benzer bir yaklaşım izleyerek, LIDAR sensörü eklemenin mantıklı olmadığını düşündüm. Bunun yerine, kameradan gelen verileri YOLOv4 ile eğittiğim modele vererek engel tespitini gerçekleştirmeyi planlıyorum.
+
+Şerit değiştirme, kameradan gelen görsel verilerle algılanacak. Şerit değiştirmenin gerektiği durumlarda, örneğin videoda girilmez tabelasının tespit edilmesiyle bu işlem başlatılacak. Tespit edilen nesnenin kameranın hangi yönünde olduğuna bağlı olarak şerit değiştirme işlemi yapılacak. Örneğin, engel kameranın solundaysa araç sağa, sağındaysa sola geçecek(Şerit tespiti kısmında, şerit koordinatları alınarak, şerit bilgilerine göre sağ veya sol şerit belirlemesi de yapılabilir.). Bu geçiş işlemi sırasında, aracın önce direksiyonu sabit bir açıyla belli bir süre döndürülüp, ardından tam tersi açıya geçilerek şerit değiştirilmiş olacak. Bu işlem tamamlandıktan sonra, aracın şerit tespit ve takip sistemi devreye girecek ve yeni şeritte aracı ortalayacak. Şerit takip, başka bir işlem gerektiğinde devre dışı kalana kadar devam edecek.
+
+
+
+https://github.com/user-attachments/assets/a90081f1-d1e7-478b-adcc-0c72c80e530e
+
+---
+### Park algoritması:
+
+
+
 ---
 # 10 Eylül 2024 (Eklemeler ve Güncellemeler)
 
