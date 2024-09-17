@@ -32,8 +32,17 @@ https://github.com/user-attachments/assets/a90081f1-d1e7-478b-adcc-0c72c80e530e
 ---
 ### Park algoritması:
 
-Park kısmında öncelikle araç park tabelasını görene kara kör ilerleyiş dediğiğimiz bir ilerleyişi segileyecek. bu ilerleyiş önceden belirlenmiş olacaktır. bu ilerleyiş sırasında yolov4 ile eğitilmiş modele sürekli olarak tabela tespit için kullanılan kameradan görsel aktarılacak. model
+Park etme aşamasında, araç park tabelasını görene kadar "kör ilerleyiş" olarak adlandırılan, önceden tanımlanmış bir sürüş gerçekleştirecektir. Bu süreçte, YOLOv4 ile eğitilmiş modele sürekli olarak kamera görüntüleri aktarılacak ve model park tabelasını tespit etmeye çalışacaktır. Park tabelası tespit edildiğinde, sistemin kararlılığını korumak adına birden fazla tabela tespit edilme olasılığı göz önünde bulundurulacaktır. Bu durumda, kamera merkezine en yakın olan tabela ve park alanı esas alınacaktır. Ardından HoughLinesP algoritması ile geliştirilmiş şerit tespit sistemi devreye girecektir.
 
+Bu noktada ana şerit tespit algoritması kullanılmayacaktır. Bunun nedeni, ana algoritmanın histogram yöntemini kullanarak görüntüdeki en yoğun piksel bölgelerini şerit olarak algılamasıdır. Bu yöntem, park alanlarındaki istenilen şeritleri doğru şekilde algılayamayabilir. Çünkü park alanında birden fazla şerit bulunabilir ve sadece "park edilebilir" tabelasının olduğu şeritler algılanmalı ve takip edilmelidir. Bu nedenle, park alanlarındaki şeritler için HoughLinesP kullanılarak özel bir şerit tespit algoritması geliştirilmiştir.
+
+Geliştirilen şerit tespit algoritması, park tabelasının x koordinatına en yakın sol ve sağ şeritleri belirler. Tabelanın hemen solunda ve sağında yer alan bu iki şerit, aracın park edebileceği alanı tanımlar. Algoritma, bu iki şeridin orta noktasını hesaplayarak aracı bu bölgeye yönlendirir. Hesaplama orta nokta bu formülle verilir: 
+
+(((line_center / (cam_width / 2)) - 1) * -1) 
+
+Bu forlüm sonucunda elde edilen değer, PID kontrol sistemine iletilir ve aracın direksiyon açısı buna göre ayarlanır.
+
+ Sistem şu an tam olarak stabil olmasa da, ilerleyen zamanlarda yapılacak iyileştirmelerle daha kararlı ve güvenilir hale getirilmesi planlanmaktadır.
 
 ---
 # 10 Eylül 2024 (Eklemeler ve Güncellemeler)
