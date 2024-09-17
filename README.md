@@ -1,6 +1,6 @@
 # Self Driving Car
 
-***Proje hala geliştiriliyor.***
+***Proje geliştirilmeye devam ediyor.***
 
 # Gereksinimler
 
