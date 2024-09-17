@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/d7583df0-7697-46d0-a2d2-b156cf7373b3
 # Self Driving Car
 
 ***Proje hala geliştiriliyor.***
