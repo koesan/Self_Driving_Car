@@ -49,21 +49,11 @@ Bu yöntem, görevde istenen stabiliteyi sağlamada başarılı oldu.
 
 ## Güncellemeler.
 
-Main.py dosyasındaki durak algoritmasını sağlamak için bazı güncellemeler yapıldı. Güncellenen kısımlar şu şekildedir:
+Main.py dosyasındaki durak algoritmasını sağlamak için bazı güncellemeler yapıldı. 
 
-1. **Tabela Tespiti:** Öncelikle durak tabelasının tespiti yapılır. Tespit edilen tabela kontrol edilerek, eğer tabela bir durak tabelasıysa, durak algoritması devreye girer.
-   
-2. **Durak Algoritmasının Devreye Girmesi:** Durak tabelası tespit edildiğinde, durak algoritmasından gelen veriler PID algoritmasına gönderilir. PID algoritmasından çıkan değer ise direksiyon açısı olarak ayarlanır.
-
-3. **Cebin İçinde Olup Olmadığının Kontrolü:** Araç cebin içinde olup olmadığı kontrol edilir. Eğer araç durak cebindeyse, 10 saniye boyunca bekler. Bekleme süresi sonunda, önceden belirlenmiş hareketler ile araç cebin dışına çıkar.
-
-4. **Algoritmanın Devre Dışı Bırakılması:** Araç durak cebinden çıktıktan sonra, durak algoritması devre dışı bırakılır ve araç normal seyrine devam eder.
-
-Bu güncellemelerle birlikte durak tespiti ve aracın durak cebine girip çıkması işlemi daha güvenilir hale getirilmiştir.
-
+Öncelikle durak tabelası tespit edilip kontrol edilir ve eğer tabela bir durak tabelasıysa, durak algoritması devreye girer ve şerit tespit için kullanılan kamera göreslleri durak algoritmasına aktarılıyor. Durak algoritmasından gelen veriler PID algoritmasına gönderilir ve çıkan değer direksiyon açısı olarak ayarlanır. Ardından, aracın durak cebinin içinde olup olmadığı kontrol edilir. Eğer araç cebin içindeyse, 10 saniye boyunca bekler. Bekleme süresi dolduğunda, önceden belirlenmiş hareketler ile araç cebin dışına çıkar. Son olarak, durak algoritması devre dışı bırakılır ve araç yoluna devam eder.
 
 https://github.com/user-attachments/assets/3796ba41-0a23-4283-8fb9-9ec3148ce33c
-
 
 ---
 # 17 Eylül 2024 (Eklemeler ve Güncellemeler)
