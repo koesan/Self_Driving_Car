@@ -12,6 +12,40 @@ scipy==1.14.1
 
 [YoloV4 dosyaları](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing)
 
+---
+
+# 3 Ekim 2024 (Eklemeler ve Güncellemeler)
+
+## Eklenenler
+
+### Durak algoritamsı:
+
+Teknofest'teki görevlerden biri, otonom aracın durak tabelasını gördüğünde durak cebine girip belirli bir süre beklemesi ve ardından yola devam etmesidir. Bu görevi gerçekleştirmek için birkaç farklı algoritma geliştirdim.
+
+İlk olarak, park algoritmasında kullandığım şerit tespit algoritması ile durak cebinin şeritlerinin orta noktasını bulup aracı bu noktaya yönlendirmeyi planladım. Ancak bu yöntem tam olarak istediğim stabiliteyi sağlayamadı. Bazen şerit tespiti kayboluyor veya şeritlerin kaymasından dolayı araç ani dönüşler yapıyordu, bu da görevin başarısız olmasına yol açıyordu.
+
+Daha sonra, kameranın en solundaki şeridi sürekli takip eden bir algoritma denedim, ancak bu da istediğim başarıyı getirmedi. Sonunda geliştirdiğim üçüncü algoritma ile istediğim başarıyı elde ettim. Bu algoritma, durak tabelası tespit edildiğinde direksiyon açısını sabit tutarak aracın düz bir şekilde ilerlemesini sağlıyor. Araç ilerlerken, şerit tespiti için kullanılan kameradan gelen veriler ile mavi alan araması yapılıyor.
+
+Mavi alan araması için görüntü işleme teknikleri kullanılıyor. Önce, `inRange` fonksiyonu ile mavi alan maskelemesi yapılıyor. Ardından, `findContours` ile maskede beyaz noktaların koordinatları bulunuyor. Bu koordinatlar, mavi alanın yerini gösteriyor. Araç, mavi alanı bulana kadar düz bir şekilde ilerliyor ve alan bulunduğunda, bu alanın orta noktası alınıyor.
+
+Bu orta noktanın x koordinatı, pozisyon değerini hesaplamak için kullanılıyor. Formül şu şekilde:
+
+```python
+pos = (540 - center_x) * 0.00513888888
+```
+
+Bu formül, kameranın orta noktası ile tespit edilen mavi alanın x koordinatının farkını ve webots simülasyonunda piksel uzunluğunun metreye oranını kullanarak hesaplanıyor. Bu pos değeri, PID algoritmasına veriliyor ve çıkan sonuç direksiyon açısı olarak kullanılıyor.
+
+
+Aracın durak cebinde olduğunu belirlemek için şu formülü kullanıyorum:
+
+```python
+np.sum(mask == 255) / (img.shape[0] * img.shape[1])
+```
+
+Bu formül, maskede 255 değeri ile gösterilen beyaz piksellerin ekran oranını hesaplıyor. Eğer bu oran 0.56’dan büyükse, araç durak cebinin içinde kabul ediliyor. Araç 10 saniye boyunca durduktan sonra, önceden belirlenmiş bir hareket planı ile durak cebinden çıkıp yola devam ediyor.
+
+Bu yöntem, görevde istenen stabiliteyi sağlamada başarılı oldu.
 
 ---
 # 17 Eylül 2024 (Eklemeler ve Güncellemeler)
