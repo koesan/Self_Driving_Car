@@ -12,6 +12,7 @@ For this project, we use simulation software. You can download [Webots R2023b](h
 
 After installing it, open the program and go **File -> Open World** and select the file from the **world** folder in the project.
 
+---
 
 Projede kullanılan simülasyon ortamını [Webots R2023b](https://github.com/cyberbotics/webots/releases/tag/R2023b) linki üzerinden işletim sisteminize uygun olan sürümü indirip kurun.
 
@@ -25,6 +26,7 @@ Use these commands to install the necessary Python libraries:
 pip3 install opencv-python==4.10.0.84
 pip3 install scipy==1.14.1
 ```
+---
 
 Aşağıdaki komutlarla gerekli Python kütüphanelerini kurun:
 
@@ -36,6 +38,8 @@ pip3 install scipy==1.14.1
 ### Yolo Model Files(Yolo Model Dosyaları):
 
 Download [YoloV4 files](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing) and put them in the same folder where **main.py** is located.
+
+---
 
 [YoloV4 dosyalarını](https://drive.google.com/drive/folders/12GEDLy-Ujzgo5AEnpvfesSiQYkwWzi02?usp=sharing) indirin ve **main.py** dosyasının bulunduğu klasöre yerleştirin.
 
