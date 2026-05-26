@@ -1,6 +1,6 @@
 <div align="center">
 
-# Self Driving Car
+# Self Driving Car (TEKNOFEST Robotaxi Competition)
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org) 
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-green.svg)](https://opencv.org) 
@@ -8,7 +8,7 @@
 [![Webots](https://img.shields.io/badge/Webots-R2023b-orange.svg)](https://cyberbotics.com) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🚗 **An intelligent autonomous vehicle simulation project featuring advanced computer vision and control algorithms**
+🚗 **Developed for the TEKNOFEST Robotaxi Competition, an intelligent autonomous vehicle simulation project featuring advanced computer vision and control algorithms**
 
 ---
 
@@ -24,7 +24,7 @@
 
 ### About This Project
 
-This autonomous driving simulation represents a comprehensive approach to self-driving car technology, built entirely within the Webots simulation environment. The project demonstrates real-world autonomous vehicle capabilities including lane detection, traffic sign recognition, obstacle avoidance, and parking assistance.
+**Developed for the TEKNOFEST 2023 Robotaxi Autonomous Vehicle Competition**, this autonomous driving simulation represents a comprehensive approach to self-driving car technology, built entirely within the Webots simulation environment. The project demonstrates real-world autonomous vehicle capabilities including lane detection, traffic sign recognition, obstacle avoidance, and parking assistance.
 
 The system employs sophisticated computer vision techniques powered by OpenCV and a custom-trained YOLOv4 model for traffic sign detection. The vehicle navigates complex urban environments using advanced PID control algorithms, making real-time decisions based on visual input from dual camera systems.
 
@@ -154,9 +154,9 @@ https://github.com/user-attachments/assets/30a03da8-7f35-4071-8cfa-f2636c6b6632
 
 ### Proje Hakkında
 
-Bu otonom sürüş simülasyonu, tamamen Webots simülasyon ortamında geliştirilmiş kapsamlı bir sürücüsüz araç teknolojisi yaklaşımını temsil eder. Proje, şerit algılama, trafik işareti tanıma, engel kaçınma ve park yardımı dahil olmak üzere gerçek dünya otonom araç yeteneklerini göstermektedir.
+TEKNOFEST 2023 Robotaksi Otonom Araç Yarışması için geliştirilen bu otonom sürüş simülasyonu, tamamen Webots simülasyon ortamında geliştirilmiş kapsamlı bir sürücüsüz araç teknolojisi yaklaşımını temsil eder. Proje; şerit algılama, trafik işareti tanıma, engelden kaçınma ve park desteği dahil olmak üzere gerçek dünya otonom araç yeteneklerini göstermektedir.
 
-Sistem, OpenCV ile desteklenen gelişmiş bilgisayarlı görü teknikleri ve trafik işareti algılama için özel eğitilmiş YOLOv4 modeli kullanır. Araç, çift kamera sistemlerinden gelen görsel girdilere dayalı gerçek zamanlı kararlar alarak, gelişmiş PID kontrol algoritmaları kullanarak karmaşık şehir ortamlarında gezinir.
+Sistem, OpenCV ile desteklenen gelişmiş bilgisayarlı görü teknikleri ve trafik işareti algılama için özel olarak eğitilmiş YOLOv4 modelini kullanır. Araç, çift kamera sistemlerinden gelen görsel girdilere dayalı olarak gerçek zamanlı kararlar alır ve gelişmiş PID kontrol algoritmaları sayesinde karmaşık şehir ortamlarında otonom şekilde hareket eder.
 
 ### ✨ Temel Özellikler
 
