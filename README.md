@@ -8,7 +8,7 @@
 [![Webots](https://img.shields.io/badge/Webots-R2023b-orange.svg)](https://cyberbotics.com) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🚗 **Developed for the TEKNOFEST Robotaxi Competition, an intelligent autonomous vehicle simulation project featuring advanced computer vision and control algorithms**
+🚗 **Developed for the TEKNOFEST 2023 Robotaxi Autonomous Vehicle Competition, an intelligent autonomous vehicle simulation project featuring advanced computer vision and control algorithms**
 
 ---
 
